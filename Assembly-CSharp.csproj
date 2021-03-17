@@ -70,7 +70,14 @@
     <Compile Include="Assets\Scripts\Camera Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Cloud Collector Scripts\CloudCollector.cs" />
     <Compile Include="Assets\Scripts\Cloud Collector Scripts\CloudSpawner.cs" />
+    <Compile Include="Assets\Scripts\Collectable Scripts\CollectableScript.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\GamePlayController.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\HighScoreController.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\Game Controller\OptionsController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerBound.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerScore.cs" />
     <None Include="Assets\Font\readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.21f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -22,11 +22,17 @@ public class CloudSpawner : MonoBehaviour
     void Awake()
     {
         controlX = 0;
-        player = GameObject.Find("Player");
+        
         SetMinAndMaxX();
         CreateClouds();
-        
-       
+        player = GameObject.Find("Player");
+        for(int i = 0; i < collectables.Length; i++)
+        {
+            collectables[i].SetActive(false);
+        }
+
+
+
     }
     // Start is called before the first frame update
     void Start()
@@ -158,6 +164,28 @@ public class CloudSpawner : MonoBehaviour
                         lastCloudPositionY = temp.y;
                         clouds[i].transform.position = temp;
                         clouds[i].SetActive(true);
+                        int ramdom = Random.Range(0, collectables.Length);
+                        if(clouds[i].tag != "Deadly")
+                        {
+                            if (!collectables[ramdom].activeInHierarchy)
+                            {
+                                Vector3 temp2 = clouds[i].transform.position;
+                                temp2.y += 0.7f;
+                                if (collectables[ramdom].tag == "Life")
+                                {
+                                    if(PlayerScore.lifeCount < 2)
+                                    {
+                                        collectables[ramdom].transform.position = temp2;
+                                        collectables[ramdom].SetActive(true);
+                                    }
+                                }
+                                else
+                                {
+                                    collectables[ramdom].transform.position = temp2;
+                                    collectables[ramdom].SetActive(true);
+                                }
+                            }
+                        }
                     }
                 }
             }
